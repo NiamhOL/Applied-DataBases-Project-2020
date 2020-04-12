@@ -1,0 +1,8 @@
+
+SELECT DISTINCT Table1.Name as name, Table3.Name as name, Table2.Language as language, Table2.Percentage as percentage
+FROM city Table1
+LEFT JOIN countrylanguage Table2 ON Table1.CountryCode = Table2.CountryCode
+INNER JOIN country Table3 ON Table1.ID = Table3.Capital
+WHERE Table2.IsOfficial = "T" 
+AND Table3.Continent="North America"
+ORDER BY Table1.Name ASC, Table3.Name ASC, Table2.Language ASC, Table2.Percentage ASC;
